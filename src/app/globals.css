@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-cormorant: 'Cormorant Garamond', Georgia, serif;
+  --font-jakarta: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-mono: 'Space Mono', monospace;
+  
+  --forest-night: #192421;
+  --canopy-green: #324D3C;
+  --dawn-stone: #D9D8D1;
+  --bark-brown: #5E3A29;
+  --stone-cream: #F7F5F0;
+  --stone-sand: #EFECE6;
+  --brass: #C8A97E;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #192421;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #324D3C;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C8A97E;
+}
+
+/* Base resets & typography */
+body {
+  background-color: var(--stone-cream);
+  color: var(--forest-night);
+  overflow-x: hidden;
+}
+
+/* Ticker Pause on Hover */
+.ticker-container:hover .ticker-track {
+  animation-play-state: paused;
+}
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Subtle Film Grain Texture Overlay */
+.bg-forest-texture {
+  background-image: radial-gradient(rgba(200, 169, 126, 0.08) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Luxury Card & Frame Utilities */
+@layer components {
+  .luxury-button-primary {
+    @apply inline-flex items-center justify-center gap-3 px-7 py-3.5 bg-forest-night text-stone-cream text-xs uppercase tracking-luxury font-medium border border-forest-canopy/40 hover:bg-forest-canopy hover:border-brass transition-all duration-300 shadow-sm active:translate-y-0.5 disabled:opacity-50 disabled:pointer-events-none;
+  }
+  
+  .luxury-button-secondary {
+    @apply inline-flex items-center justify-center gap-3 px-7 py-3.5 bg-transparent text-forest-night text-xs uppercase tracking-luxury font-medium border border-forest-night/25 hover:border-forest-night hover:bg-forest-night hover:text-stone-cream transition-all duration-300 active:translate-y-0.5 disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  .luxury-button-brass {
+    @apply inline-flex items-center justify-center gap-3 px-7 py-3.5 bg-brass text-forest-night text-xs uppercase tracking-luxury font-medium hover:bg-brass-light transition-all duration-300 shadow-sm active:translate-y-0.5 disabled:opacity-50;
+  }
+
+  .editorial-tag {
+    @apply inline-block font-mono text-[11px] tracking-wide uppercase px-2.5 py-1 bg-forest-night/5 text-forest-night border border-forest-night/10;
+  }
+
+  .editorial-tag-dark {
+    @apply inline-block font-mono text-[11px] tracking-wide uppercase px-2.5 py-1 bg-stone-dawn/10 text-stone-dawn border border-stone-dawn/20;
+  }
+}
