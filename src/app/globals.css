@@ -14,6 +14,11 @@
   --stone-cream: #F7F5F0;
   --stone-sand: #EFECE6;
   --brass: #C8A97E;
+  --brass-light: #DFC7A5;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 /* Custom Scrollbar */
@@ -47,6 +52,62 @@ body {
   animation-play-state: paused;
 }
 
+/* Luxury Resort Animations */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes floatReverse {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+@keyframes kenBurns {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes pulseSubtle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 7s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: floatReverse 8s ease-in-out infinite;
+}
+
+.animate-kenburns {
+  animation: kenBurns 22s ease-in-out infinite;
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 3s ease-in-out infinite;
+}
+
 /* Accessibility: Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -65,18 +126,50 @@ body {
   background-size: 24px 24px;
 }
 
+/* Highlight & Luxury Utilities */
+.highlight-gold {
+  color: #C8A97E;
+  font-family: var(--font-cormorant);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.highlight-gold-gradient {
+  background: linear-gradient(135deg, #E5C378 0%, #C8A97E 50%, #A88654 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-style: italic;
+}
+
+.resort-card-lift {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+}
+
+.resort-card-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px -15px rgba(25, 36, 33, 0.12), 0 0 25px -5px rgba(200, 169, 126, 0.2);
+}
+
+.resort-image-hover {
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease;
+}
+
+.group:hover .resort-image-hover {
+  transform: scale(1.07);
+}
+
 /* Luxury Card & Frame Utilities */
 @layer components {
   .luxury-button-primary {
-    @apply inline-flex items-center justify-center gap-3 px-7 py-3.5 bg-forest-night text-stone-cream text-xs uppercase tracking-luxury font-medium border border-forest-canopy/40 hover:bg-forest-canopy hover:border-brass transition-all duration-300 shadow-sm active:translate-y-0.5 disabled:opacity-50 disabled:pointer-events-none;
+    @apply inline-flex items-center justify-center gap-3 px-7 py-3.5 bg-forest-night text-stone-cream text-xs uppercase tracking-luxury font-medium border border-forest-canopy/40 hover:bg-forest-canopy hover:border-brass hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 shadow-sm active:translate-y-0 disabled:opacity-50 disabled:pointer-events-none;
   }
   
   .luxury-button-secondary {
-    @apply inline-flex items-center justify-center gap-3 px-7 py-3.5 bg-transparent text-forest-night text-xs uppercase tracking-luxury font-medium border border-forest-night/25 hover:border-forest-night hover:bg-forest-night hover:text-stone-cream transition-all duration-300 active:translate-y-0.5 disabled:opacity-50 disabled:pointer-events-none;
+    @apply inline-flex items-center justify-center gap-3 px-7 py-3.5 bg-transparent text-forest-night text-xs uppercase tracking-luxury font-medium border border-forest-night/25 hover:border-forest-night hover:bg-forest-night hover:text-stone-cream hover:-translate-y-0.5 transition-all duration-300 active:translate-y-0 disabled:opacity-50 disabled:pointer-events-none;
   }
 
   .luxury-button-brass {
-    @apply inline-flex items-center justify-center gap-3 px-7 py-3.5 bg-brass text-forest-night text-xs uppercase tracking-luxury font-medium hover:bg-brass-light transition-all duration-300 shadow-sm active:translate-y-0.5 disabled:opacity-50;
+    @apply inline-flex items-center justify-center gap-3 px-7 py-3.5 bg-brass text-forest-night text-xs uppercase tracking-luxury font-medium hover:bg-brass-light hover:-translate-y-0.5 hover:shadow-[0_10px_25px_rgba(200,169,126,0.35)] transition-all duration-300 shadow-sm active:translate-y-0 disabled:opacity-50;
   }
 
   .editorial-tag {

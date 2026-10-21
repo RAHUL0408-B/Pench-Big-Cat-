@@ -6,17 +6,15 @@ export interface NavItem {
 
 export const MAIN_NAV_ITEMS: NavItem[] = [
   { label: "Home", href: "/" },
-  { label: "Stay With Us", href: "/stay", description: "Villas & forest sanctuaries" },
-  { label: "Jugni Family Story", href: "/our-story", description: "The tigress & lineage" },
-  { label: "Experiences & Amenities", href: "/experiences", description: "Dining, spa & wellness" },
-  { label: "Gallery", href: "/gallery", description: "Wilderness photography" },
-  { label: "Safari & Nearby", href: "/safari-nearby", description: "Pench reserve & trails" },
-  { label: "Offers", href: "/offers", description: "Curated seasonal stays" },
-  { label: "Location & Contact", href: "/contact", description: "Reaching the resort" },
+  { label: "About Us", href: "/about" },
+  { label: "Our Accommodations", href: "/stay" },
+  { label: "Experiences & Amenities", href: "/experiences" },
+  { label: "Services", href: "/services" },
 ];
 
 export const FOOTER_PAGES = [
   { label: "Home", href: "/" },
+  { label: "About Us", href: "/about" },
   { label: "Stay With Us", href: "/stay" },
   { label: "Jugni Family Story", href: "/our-story" },
   { label: "Experiences & Amenities", href: "/experiences" },

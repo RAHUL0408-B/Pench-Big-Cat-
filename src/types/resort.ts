@@ -33,6 +33,8 @@ export interface RoomItem {
   };
   approvalStatus: ApprovalStatus;
   priceNote: string;
+  idealFor?: string;
+  glance?: { label: string; value: string }[];
 }
 
 export interface FacilityItem {

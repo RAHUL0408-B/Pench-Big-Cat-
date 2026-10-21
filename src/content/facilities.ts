@@ -1,110 +1,121 @@
-import { FacilityItem } from "@/types/resort";
+export interface AmenityItem {
+  id: string;
+  name: string;
+  title: string;
+  meaning: string;
+  category: string;
+  description: string;
+  image: string;
+}
 
-export const FACILITIES_DATA: FacilityItem[] = [
+export interface NearbyExperienceItem {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+}
+
+export const RESORT_AMENITIES: AmenityItem[] = [
   {
-    id: "bargad",
-    name: "Bargad",
-    meaning: "The Banyan Tree — Sacred Forest Gathering",
-    category: "Dining & Hearth",
-    tagline: "Where the forest family gathers to share meals, stories, and warmth.",
-    description: [
-      "In the wild heart of Pench, the great banyan (Bargad) is where all creatures seek shade during the midday heat. At our resort, Bargad is the communal culinary hearth where guests gather for breakfast after dawn safaris and candlelit dinners under the stars.",
-      "Our culinary philosophy celebrates the rich agricultural heritage of Madhya Pradesh, incorporating heirloom millets, jungle honey, fresh river herbs, and slow-braised clay-pot delicacies cooked over fragrant wood coals.",
-      "Indoor seating features hand-carved teak dining tables, while our open-air terrace is framed by lanterns hung from the canopy branches.",
-    ],
-    hours: "Breakfast: 06:30 - 10:30 | Lunch: 12:30 - 15:00 | Dinner: 19:30 - 22:30",
-    locationOnProperty: "Central forest lawn adjacent to the lotus pond",
-    image: "/images/amenities/bargad-dining.jpg",
-    highlights: [
-      "Authentic central Indian clay-pot specialties",
-      "Farm-to-table organic vegetables from neighbouring villages",
-      "Interactive bush dinners and bonfire storyteller evenings",
-      "Tailored bush-breakfast picnic hampers for dawn safaris",
-    ],
-    approvalStatus: "pending",
-  },
-  {
-    id: "neel",
-    name: "Neel",
-    meaning: "The Deep Blue — Forest Waterhole",
-    category: "Infinity Pool",
-    tagline: "A tranquil waterhole mirroring the sky, where the cubs learn the quiet art of stillness.",
-    description: [
-      "Waterholes are the lifeblood of tiger country. Neel, meaning pure blue, is our natural stone swimming pool designed to blend effortlessly into the surrounding buffer terrain.",
-      "Constructed from rough-hewn basalt stone and lined with volcanic tiles that mirror the jungle sky, Neel allows swimmers to gaze directly out into the teak buffer while listening to bird calls.",
-      "Sunken stone loungers and shaded canvas cabanas provide refreshing respite throughout sunlit afternoons.",
-    ],
-    hours: "07:00 - 19:00 hrs daily",
-    locationOnProperty: "Elevated western ridge facing the sunset tree line",
-    image: "/images/amenities/neel-pool.jpg",
-    highlights: [
-      "Infinity edge visual blend into teak forest buffer",
-      "Chemical-free natural mineral filtration system",
-      "Poolside botanical refreshments and herbal coolers",
-      "Sunset observation deck with evening fire braziers",
-    ],
-    approvalStatus: "pending",
-  },
-  {
-    id: "thehrav",
+    id: "thehrav-spa",
     name: "Thehrav",
-    meaning: "Slowing Down — Forest Ayurvedic Spa",
-    category: "Wellness & Spa",
-    tagline: "The tigress resting in the dappled shade after a night of roaming.",
-    description: [
-      "Thehrav embodies stillness and mindful restoration. After exhilarating hours traversing dusty forest trails in open 4x4s, the spa invites guests to decompress through ancient Indian wellness traditions.",
-      "Our therapies utilize cold-pressed forest oils infused with wild neem, vetiver, camphor, and mahua flowers harvested responsibly from local tribal communities.",
-      "Individual treatment pavilions feature open-air stone courtyards where the soothing murmur of natural water fountains complements therapeutic bodywork.",
-    ],
-    hours: "09:00 - 20:00 hrs (Advance booking recommended)",
-    locationOnProperty: "Quiet eastern sanctuary grove",
+    title: "Thehrav — The Spa",
+    meaning: "A sense of stillness and slowing down",
+    category: "Spa & Wellness",
+    description:
+      "Thehrav, meaning a sense of stillness and slowing down, invites you to take a pause from everyday routines. Make time for relaxation and enjoy a more restful side of your Pench getaway. Whether you're unwinding after a day of exploration or simply looking for a moment to yourself, let relaxation become part of your stay.",
     image: "/images/amenities/thehrav-spa.jpg",
-    highlights: [
-      "Signature Abhyanga four-hand full-body massage",
-      "Post-safari herbal steam baths & therapeutic compresses",
-      "Ayurvedic consultation and customized oil blending",
-      "Private open-to-sky couples' wellness suite",
-    ],
-    approvalStatus: "pending",
   },
   {
-    id: "abha",
+    id: "neel-pool",
+    name: "Neel",
+    title: "Neel — Spacious Swimming Pool",
+    meaning: "Blue, inspired by a waterhole in the wild",
+    category: "Swimming Pool",
+    description:
+      "Neel, meaning blue, is the proposed name for the resort's swimming pool, inspired by the idea of a waterhole in the wild. Take a refreshing break, enjoy some leisure time and make the most of a relaxed afternoon at the resort.",
+    image: "/images/amenities/neel-pool.jpg",
+  },
+  {
+    id: "bargad-restaurant",
+    name: "Bargad",
+    title: "Bargad — Restaurant",
+    meaning: "The banyan tree as a place of gathering",
+    category: "Dining",
+    description:
+      "Good food is an essential part of a memorable holiday. At Bargad, the proposed name for the resort restaurant, enjoy a relaxed dining experience and take time to savour the moments shared around the table. Inspired by the banyan tree as a place of gathering, Bargad reflects the warmth of coming together over a meal.",
+    image: "/images/amenities/bargad-dining.jpg",
+  },
+  {
+    id: "abha-salon",
     name: "Abha",
-    meaning: "Radiance & Glow — Grooming & Bridal Lounge",
+    title: "Abha — The Salon",
+    meaning: "Glow, inspired by the radiance of a tigress in evening light",
     category: "Salon & Grooming",
-    tagline: "The golden luminescence of a tiger's coat caught in the last rays of twilight.",
-    description: [
-      "Abha, meaning glow, is our dedicated grooming and beauty retreat. Whether preparing for an intimate jungle wedding or refreshing after multi-day safaris, guests receive refined personal care.",
-      "Our specialists provide botanical hair treatments, therapeutic manicures, and bridal dressing services with gentle natural formulas.",
-    ],
-    hours: "10:00 - 19:00 hrs daily",
-    locationOnProperty: "Adjacent to Thehrav wellness pavilion",
+    description:
+      "Abha, meaning glow, is the proposed name for the resort salon, inspired by the warm radiance of a tigress's coat in the evening light. Make time for personal care and enjoy a little extra relaxation during your getaway.",
     image: "/images/amenities/abha-salon.jpg",
-    highlights: [
-      "Bridal styling and destination event grooming suites",
-      "Botanical head and scalp revival therapies",
-      "Organic cruelty-free facial elixirs",
-    ],
-    approvalStatus: "pending",
   },
   {
-    id: "chhalaang",
+    id: "chhalaang-gym",
     name: "Chhalaang",
-    meaning: "The Leap — Power & Vitality",
-    category: "Fitness & Movement",
-    tagline: "A tiger's leap — pure feline power, precision, and boundless agility.",
-    description: [
-      "Designed for guests who maintain energetic movement even while immersed in nature, Chhalaang is an open-air timber fitness deck equipped for functional strength and flexibility.",
-      "Every morning at dawn, our resident yoga practitioner leads guided pranayama (breathwork) and gentle vinyasa sequences as the jungle wakes.",
-    ],
-    hours: "06:00 - 21:00 hrs daily",
-    locationOnProperty: "Southern bamboo grove overlooking meadow",
+    title: "Chhalaang — Gym Area",
+    meaning: "A leap, inspired by the strength of a tiger in motion",
+    category: "Fitness & Gym",
+    description:
+      "Chhalaang, meaning a leap, is the proposed name for the resort gym, inspired by the strength and energy of a tiger in motion. For guests who like to maintain their fitness routine while travelling, the gym can be part of a stay that balances relaxation with activity.",
     image: "/images/amenities/chhalaang-gym.jpg",
-    highlights: [
-      "Dawn jungle yoga and meditation sessions",
-      "Free weights, kettlebells, and functional movement gear",
-      "Open-air timber platform with panoramic forest views",
-    ],
-    approvalStatus: "pending",
   },
 ];
+
+export const NEARBY_EXPERIENCES: NearbyExperienceItem[] = [
+  {
+    id: "jungle-safari",
+    title: "Jungle Safari",
+    description:
+      "A visit to Pench is an opportunity to explore a landscape known for its rich wildlife and forest surroundings. A jungle safari offers the chance to experience this remarkable natural environment and, with luck, encounter some of its wild inhabitants. From the thrill of the forest to the stories shared by knowledgeable guides, every safari brings its own sense of anticipation.",
+    image: "/images/gallery/safari-jeep.jpg",
+  },
+  {
+    id: "kohka-lake",
+    title: "Kohka Lake Adventure Camp",
+    description:
+      "Add an outdoor adventure to your Pench itinerary with a visit to Kohka Lake Adventure Camp. Discover a different side of the region, enjoy time in the outdoors and make room for experiences beyond the resort.",
+    image: "/images/gallery/forest-sunset.jpg",
+  },
+  {
+    id: "nature-walks",
+    title: "Nature Walks",
+    description:
+      "Sometimes, the best way to experience nature is to take your time. Nature walks offer an opportunity to observe the surroundings at a gentler pace, appreciate the landscape and notice the small details that make the natural world fascinating.",
+    image: "/images/property/bamboo-path.jpg",
+  },
+  {
+    id: "birdwatching",
+    title: "Birdwatching",
+    description:
+      "Pench's natural surroundings offer opportunities to appreciate birdlife and observe the fascinating variety of birds found in the region. Bring your curiosity, take your time and enjoy the simple pleasure of noticing the colours, calls and movements of the birds around you.",
+    image: "/images/gallery/wildlife-deer.jpg",
+  },
+  {
+    id: "pottery",
+    title: "Pottery",
+    description:
+      "Take a break from the usual holiday routine and discover the creative side of your getaway through pottery. Experience the charm of working with clay and exploring a traditional craft at a slower pace.",
+    image: "/images/property/morning-deck.jpg",
+  },
+];
+
+// Backward compatibility for existing imports in home
+export const FACILITIES_DATA = RESORT_AMENITIES.map((a) => ({
+  id: a.id,
+  name: a.name,
+  meaning: a.meaning,
+  category: a.category,
+  tagline: a.meaning,
+  description: [a.description],
+  locationOnProperty: "On Resort Grounds",
+  image: a.image,
+  highlights: [a.meaning],
+  approvalStatus: "approved" as const,
+}));
